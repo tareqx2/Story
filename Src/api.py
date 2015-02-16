@@ -24,7 +24,7 @@ def get_story():
 	response["Name"] = movieName[0].get_text()
 	soup2 = soup.findAll("div", { "itemprop" : "description" })
 	
-	if (soup2):
+	if (not soup2):
 		storyline = BeautifulSoup(soup2[0].get_text())
 		storyline = storyline.findAll("p")
 		response["storyline"] = storyline[0].get_text()
