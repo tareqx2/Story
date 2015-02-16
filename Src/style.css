@@ -1,0 +1,14 @@
+.jumbotron{
+	width: 60%;
+	height: 80%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 11px;
+}
+a{
+	float: right;
+	margin-right: 50px;
+}
+.description{
+	height: 88%;
+}
