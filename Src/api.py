@@ -5,6 +5,7 @@ from flask import abort
 from flask import request
 from bs4 import BeautifulSoup
 from flask.ext.cors import CORS
+import json
 
 
 app = Flask(__name__)
@@ -18,7 +19,7 @@ def get_story():
 	response = {}
 	soup = BeautifulSoup(resp.text)
 	description = soup.findAll("p", { "itemprop" : "description" })
-	response = {"description":description}
+	response["description"] = description[0]
 	movieName = soup.findAll("span",{"itemprop": "name"})
 	response["Name"] = movieName[0].get_text()
 	soup2 = soup.findAll("div", { "itemprop" : "description" })
@@ -26,8 +27,8 @@ def get_story():
 	if (soup2):
 		storyline = BeautifulSoup(soup2[0].get_text())
 		storyline = storyline.findAll("p")
-		response["storyline"] = storyline
-	return str(response), 200
+		response["storyline"] = storyline[0]
+	return jsonify(response), 200
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=int(os.getenv("PORT","5000")))
