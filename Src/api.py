@@ -1,4 +1,5 @@
 import requests
+import os
 from flask import Flask, jsonify
 from flask import abort
 from flask import request
@@ -30,4 +31,4 @@ def get_story():
 	return response, 200
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=int(os.getenv("PORT","5000")))
