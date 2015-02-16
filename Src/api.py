@@ -27,7 +27,7 @@ def get_story():
 		storyline = BeautifulSoup(soup2[0].get_text())
 		storyline = storyline.findAll("p")
 		response["storyline"] = storyline
-	return jsonify(str(response)), 200
+	return str(response), 200
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=int(os.getenv("PORT","5000")))
