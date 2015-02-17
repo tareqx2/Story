@@ -11,8 +11,8 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-IMDB_RANDOM = "http://www.imdb.com/random/title"
-
+##IMDB_RANDOM = "http://www.imdb.com/random/title"
+IMDB_RANDOM = "http://www.imdb.com/title/tt0045793/?ref_=fn_al_tt_1"
 @app.route('/api/v1.0/story', methods=['GET'])
 def get_story():
 	resp = requests.get(IMDB_RANDOM)
@@ -23,11 +23,9 @@ def get_story():
 	movieName = soup.findAll("span",{"itemprop": "name"})
 	response["Name"] = movieName[0].get_text()
 	soup2 = soup.findAll("div", { "itemprop" : "description" })
-	
+
 	if (not soup2):
-		storyline = BeautifulSoup(soup2[0].get_text())
-		storyline = storyline.findAll("p")
-		response["storyline"] = storyline[0].get_text()
+		response["storyline"] = soup2[0].get_text()
 	return json.dumps(response), 200
 
 if __name__ == '__main__':

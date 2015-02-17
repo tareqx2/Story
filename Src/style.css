@@ -11,4 +11,6 @@ a{
 }
 .description{
 	height: 88%;
+	padding-left:10px;
+	padding-right:10px;
 }
