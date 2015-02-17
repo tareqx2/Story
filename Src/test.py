@@ -5,7 +5,7 @@ from flask import request
 from bs4 import BeautifulSoup
 import json
 
-IMDB_RANDOM = "http://www.imdb.com/title/tt0045793/?ref_=fn_al_tt_1"
+IMDB_RANDOM = "http://www.imdb.com/random/title"
 resp = requests.get(IMDB_RANDOM)
 response = {}
 soup = BeautifulSoup(resp.text)

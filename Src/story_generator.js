@@ -8,7 +8,7 @@ $(document).ready(function(){
 			var description = $('.description');
 			var synopsis = $('.synopsis p');
 			var title = $('.title');
-			title[0].textContent = json["name"];
+			title[0].textContent = json["Name"];
 			description[0].textContent = json["description"];
 			if(json["storyline"])
 				synopsis[0].textContent = json["storyline"];

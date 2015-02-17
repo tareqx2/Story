@@ -11,8 +11,8 @@ import json
 app = Flask(__name__)
 cors = CORS(app)
 
-##IMDB_RANDOM = "http://www.imdb.com/random/title"
-IMDB_RANDOM = "http://www.imdb.com/title/tt0045793/?ref_=fn_al_tt_1"
+IMDB_RANDOM = "http://www.imdb.com/random/title"
+
 @app.route('/api/v1.0/story', methods=['GET'])
 def get_story():
 	resp = requests.get(IMDB_RANDOM)
