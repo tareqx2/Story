@@ -4,13 +4,31 @@
 	margin: auto;
 	margin-top: 20px;
 	border-radius: 11px;
+	padding-top:5px !important;
 }
-a{
+#generate{
 	float: right;
 	margin-right: 50px;
+	position: absolute !important;
+	top: calc(76% - 30px);
+	left: calc(70% - 20px);
 }
 .description{
 	height: 88%;
 	padding-left:10px;
 	padding-right:10px;
+	height:auto;
+	max-height:175px;
+}
+h1{
+	font-size:30px !important;
+	margin-left: 10px;
+	margin-top:5px !important;
+}
+.hidden{
+	display:none;
+}
+#synopsis{
+	float:left;
+	margin-left:10px;
 }

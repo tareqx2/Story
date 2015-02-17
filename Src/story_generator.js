@@ -12,12 +12,19 @@ $(document).ready(function(){
 			description[0].textContent = json["description"];
 			if(json["storyline"])
 				synopsis[0].textContent = json["storyline"];
+			else
+				synopsis[0].textContent = "Sorry, no synopsis available.";
 		});
 	}
 	
 	getStory();
 	
-	$('a').on("click",function(e){
+	$('#generate').on("click",function(e){
 		getStory();
 	});
+	$("#synopsis").on("click",function(e){
+		$("#synopsis").toggleClass("hidden");
+		$(".synopsis").toggleClass("hidden");
+
+	})
 });
