@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	function getStory(){
+		$('.loading').show();
 		$.ajax({
-		  url: "http://story-generator.herokuapp.com/api/v1.0/story"
+		  url: "http://story-generator.appspot.com/api/v1.0/story"
 		})
 		.done(function(html){
 			var json = jQuery.parseJSON(html);
@@ -14,13 +15,15 @@ $(document).ready(function(){
 				synopsis[0].textContent = json["storyline"];
 			else
 				synopsis[0].textContent = "Sorry, no synopsis available.";
+			$('.loading').hide();
 		});
 	}
-	
 	getStory();
-	
+
 	$('#generate').on("click",function(e){
 		getStory();
+		$("#synopsis").removeClass("hidden");
+		$(".synopsis").addClass("hidden");
 	});
 	$("#synopsis").on("click",function(e){
 		$("#synopsis").toggleClass("hidden");

@@ -8,6 +8,7 @@ from flask.ext.cors import CORS
 import json
 
 
+
 app = Flask(__name__)
 cors = CORS(app)
 

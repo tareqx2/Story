@@ -32,3 +32,16 @@ h1{
 	float:left;
 	margin-left:10px;
 }
+.synopsis{
+	padding-left:10px;
+}
+.loading{
+	position: absolute;
+	width:100%;
+	top:33%;
+	left:45%;
+	height:100%;
+	background-color: #a3a3a3;
+	opacity: 0.4;
+	background: url(loading.gif) no-repeat;
+}

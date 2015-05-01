@@ -1,0 +1,20 @@
+{
+  "name": "Story_Generator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tareqx2/Story_Generator",
+  "authors": [
+    "Tareq Perez <tareqx3@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  },
+  "main": "Story_Generator.js"
+}
